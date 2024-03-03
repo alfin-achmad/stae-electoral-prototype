@@ -9,12 +9,9 @@ import KeenSliderWrapper from 'src/@core/styles/libs/keen-slider'
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
 // ** Demo Components Imports
-import EcommerceTable from 'src/views/dashboards/ecommerce/EcommerceTable'
 import EcommerceVisitsByDay from 'src/views/dashboards/ecommerce/EcommerceVisitsByDay'
 import EcommerceSalesOverview from 'src/views/dashboards/ecommerce/EcommerceSalesOverview'
-import EcommerceSalesThisMonth from 'src/views/dashboards/ecommerce/EcommerceSalesThisMonth'
-import EcommerceActivityTimeline from 'src/views/dashboards/ecommerce/EcommerceActivityTimeline'
-import EcommerceImpressionsOrders from 'src/views/dashboards/ecommerce/EcommerceImpressionsOrders'
+import AnalyticsTotalTransactions from "../../../views/dashboards/analytics/AnalyticsTotalTransactions";
 
 const EcommerceDashboard = () => {
   return (
@@ -27,11 +24,10 @@ const EcommerceDashboard = () => {
           <Grid item xs={12} sm={6} md={3}>
             <CardStatisticsCharacter
               data={{
-                stats: '8.14k',
-                title: 'Ratings',
+                stats: '400.000',
+                title: 'Male Electors',
                 chipColor: 'primary',
-                trendNumber: '+15.6%',
-                chipText: 'Year of 2022',
+                chipText: 'Period 1 June - 30 Decembre 2023',
                 src: '/images/cards/card-stats-img-1.png'
               }}
             />
@@ -39,30 +35,19 @@ const EcommerceDashboard = () => {
           <Grid item xs={12} sm={6} md={3}>
             <CardStatisticsCharacter
               data={{
-                stats: '12.2k',
-                trend: 'negative',
-                title: 'Sessions',
-                chipColor: 'success',
-                trendNumber: '-25.5%',
-                chipText: 'Last Month',
+                stats: '450.000',
+                title: 'Female Electors',
+                chipColor: 'primary',
+                chipText: 'Period 1 June - 30 Decembre 2023',
                 src: '/images/cards/card-stats-img-2.png'
               }}
             />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <EcommerceSalesThisMonth />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <EcommerceActivityTimeline />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <EcommerceImpressionsOrders />
-          </Grid>
-          <Grid item xs={12} md={9} sx={{ order: 3 }}>
-            <EcommerceTable />
-          </Grid>
-          <Grid item xs={12} md={3} sx={{ order: 3 }}>
+          <Grid item xs={12} md={9} sx={{ order: 3 }} height={600}>
             <EcommerceVisitsByDay />
+          </Grid>
+          <Grid item xs={12} md={3} sx={{ order: 3 }} height={600}>
+            <AnalyticsTotalTransactions />
           </Grid>
         </Grid>
       </KeenSliderWrapper>

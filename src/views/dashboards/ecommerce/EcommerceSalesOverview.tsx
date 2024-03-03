@@ -28,23 +28,23 @@ interface SaleDataType {
 
 const salesData: SaleDataType[] = [
   {
-    stats: '8,458',
-    color: 'primary',
-    title: 'Customers',
-    icon: <Icon icon='mdi:account-outline' />
-  },
-  {
-    stats: '$28.5k',
-    color: 'warning',
-    title: 'Total Profit',
-    icon: <Icon icon='mdi:poll' />
+    color: 'secondary',
+    stats: '1.350.000',
+    title: 'Total Populations',
+    icon: <Icon icon='mdi:table-account' />
   },
   {
     color: 'info',
-    stats: '2,450k',
-    title: 'Transactions',
-    icon: <Icon icon='mdi:trending-up' />
-  }
+    stats: '850.000',
+    title: 'Total Electors',
+    icon: <Icon icon='mdi:table-account' />
+  },
+  {
+    stats: '22',
+    color: 'primary',
+    title: 'Total Districts',
+    icon: <Icon icon='mdi:map' />
+  },
 ]
 
 const renderStats = () => {
@@ -70,7 +70,7 @@ const EcommerceSalesOverview = () => {
     <Card>
       <CardHeader
         sx={{ pb: 3.25 }}
-        title='Sales Overview'
+        title='Electors Overview'
         titleTypographyProps={{ variant: 'h6' }}
         action={
           <OptionsMenu
@@ -81,12 +81,8 @@ const EcommerceSalesOverview = () => {
         subheader={
           <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { color: 'success.main' } }}>
             <Typography variant='caption' sx={{ mr: 1.5 }}>
-              Total 42.5k Sales
+              Period 1 June - 30 Decembre 2023
             </Typography>
-            <Typography variant='subtitle2' sx={{ color: 'success.main' }}>
-              +18%
-            </Typography>
-            <Icon icon='mdi:chevron-up' fontSize={20} />
           </Box>
         }
       />

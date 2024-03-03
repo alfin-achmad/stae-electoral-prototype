@@ -17,9 +17,6 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 import OptionsMenu from 'src/@core/components/option-menu'
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
-// ** Util Import
-import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
-
 const EcommerceVisitsByDay = () => {
   // ** Hook
   const theme = useTheme()
@@ -27,11 +24,12 @@ const EcommerceVisitsByDay = () => {
   const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,
+      height: 600,
       toolbar: { show: false }
     },
     plotOptions: {
       bar: {
-        borderRadius: 8,
+        borderRadius: 0,
         distributed: true,
         columnWidth: '55%',
         endingShape: 'rounded',
@@ -40,15 +38,6 @@ const EcommerceVisitsByDay = () => {
     },
     legend: { show: false },
     dataLabels: { enabled: false },
-    colors: [
-      hexToRGBA(theme.palette.primary.main, 0.1),
-      hexToRGBA(theme.palette.primary.main, 1),
-      hexToRGBA(theme.palette.primary.main, 0.1),
-      hexToRGBA(theme.palette.primary.main, 1),
-      hexToRGBA(theme.palette.primary.main, 1),
-      hexToRGBA(theme.palette.primary.main, 0.1),
-      hexToRGBA(theme.palette.primary.main, 0.1)
-    ],
     states: {
       hover: {
         filter: { type: 'none' }
@@ -60,12 +49,32 @@ const EcommerceVisitsByDay = () => {
     xaxis: {
       axisTicks: { show: false },
       axisBorder: { show: false },
-      categories: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+      categories: ['Aileu', 'Ainaro', 'Baucau', 'Bobonaro', 'Covalima', 'Dili', 'Ermera', 'Lautem', 'Liquica', 'Manatuto', 'Manufahi', 'RAEOA', 'Viqueque', 'Australia', 'South of Korea', 'Indonesia', 'UK', 'North Irland', 'Portugal'],
       labels: {
         style: { colors: theme.palette.text.disabled }
       }
     },
     yaxis: { show: false },
+    colors: [
+      'rgba(255, 0, 0, 0.5)',
+      'rgba(0, 255, 0, 0.7)',
+      'rgba(0, 0, 255, 0.3)',
+      'rgba(255, 255, 0, 0.8)',
+      'rgba(255, 0, 255, 0.6)',
+      'rgba(0, 255, 255, 0.4)',
+      'rgba(128, 128, 0, 0.5)',
+      'rgba(128, 0, 128, 0.7)',
+      'rgba(0, 128, 128, 0.3)',
+      'rgba(128, 255, 0, 0.8)',
+      'rgba(255, 128, 0, 0.6)',
+      'rgba(128, 0, 255, 0.4)',
+      'rgba(0, 128, 255, 0.5)',
+      'rgba(255, 128, 128, 0.7)',
+      'rgba(128, 255, 128, 0.3)',
+      'rgba(128, 128, 255, 0.8)',
+      'rgba(255, 255, 128, 0.6)',
+      'rgba(255, 128, 255, 0.4)'
+    ],
     grid: {
       show: false,
       padding: {
@@ -79,8 +88,8 @@ const EcommerceVisitsByDay = () => {
   return (
     <Card>
       <CardHeader
-        title='Visits by Day'
-        subheader='Total 248.5k Visits'
+        title='Total Electors Per Districts'
+        subheader='Period 1 June - 30 Decembre 2023'
         subheaderTypographyProps={{ sx: { lineHeight: 1.429 } }}
         titleTypographyProps={{ sx: { letterSpacing: '0.15px' } }}
         action={
@@ -91,7 +100,7 @@ const EcommerceVisitsByDay = () => {
         }
       />
       <CardContent>
-        <ReactApexcharts type='bar' height={225} options={options} series={[{ data: [38, 55, 48, 65, 80, 38, 48] }]} />
+        <ReactApexcharts type='bar' height={400} options={options} series={[{ data: [62105, 44735, 46293, 23750, 40826, 55094, 58892, 29321, 48982, 50805, 39380, 42684, 47452, 32920, 49961, 40764, 33199, 42459, 45750]}]} />
         <Box sx={{ mt: 5, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography sx={{ mb: 0.75, fontWeight: 600 }}>Most Visited Day</Typography>

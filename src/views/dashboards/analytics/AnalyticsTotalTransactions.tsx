@@ -1,35 +1,28 @@
 // ** MUI Imports
 import Card from '@mui/material/Card'
-import Button from '@mui/material/Button'
-import Divider from '@mui/material/Divider'
 import CardHeader from '@mui/material/CardHeader'
-import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import Grid, { GridProps } from '@mui/material/Grid'
 import { styled, useTheme } from '@mui/material/styles'
 
 // ** Icon Imports
-import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import { ApexOptions } from 'apexcharts'
 
 // ** Custom Components Imports
-import CustomAvatar from 'src/@core/components/mui/avatar'
-import OptionsMenu from 'src/@core/components/option-menu'
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
 // ** Util Import
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
-const series = [
+const series = [{
+  name: 'Males',
+  data: [0.4, 0.65, 0.76, 0.88, 1.5, 2.1, 2.9, 3.8, 3.9, 4.2, 4, 4.3, 4.1, 4.2, 4.5,0, 0, 0]
+},
   {
-    name: 'Last Week',
-    data: [83, 153, 213, 279, 213, 153, 83]
-  },
-  {
-    name: 'This Week',
-    data: [-84, -156, -216, -282, -216, -156, -84]
+    name: 'Females',
+    data: [-0.8, -1.05, -1.06, -1.18, -1.4, -2.2, -2.85, -3.7, -3.96, -4.22, -4.3, -4.4,-4.1, -4, -4.1, 0, 0, 0]
   }
 ]
 
@@ -49,68 +42,69 @@ const AnalyticsTotalTransactions = () => {
 
   const options: ApexOptions = {
     chart: {
-      stacked: true,
-      parentHeightOffset: 0,
-      toolbar: { show: false }
+      type: 'bar',
+      height: 600,
+      stacked: true
     },
     plotOptions: {
       bar: {
-        borderRadius: 5,
-        barHeight: '30%',
+        borderRadius: 0,
         horizontal: true,
         endingShape: 'flat',
+        barHeight: '100%',
         startingShape: 'rounded'
       }
     },
-    tooltip: {
-      y: {
-        formatter: val => `${Math.abs(val)}`
-      }
+    dataLabels: {
+      enabled: false
     },
-    xaxis: {
-      position: 'top',
-      axisTicks: { show: false },
-      axisBorder: { show: false },
-      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      labels: {
-        formatter: val => `${Math.abs(Number(val))}`,
-        style: { colors: theme.palette.text.disabled }
+    stroke: {
+      width: 1,
+      colors: ["#fff"]
+    },
+
+    grid: {
+      xaxis: {
+        lines: {
+          show: false
+        }
       }
     },
     yaxis: {
-      labels: { show: false }
+      min: -5,
+      max: 5,
+      title: {
+        // text: 'Age',
+      },
     },
-    colors: [hexToRGBA(theme.palette.primary.main, 1), hexToRGBA(theme.palette.success.main, 1)],
-    grid: {
-      borderColor: theme.palette.divider,
-      xaxis: {
-        lines: { show: true }
-      },
-      yaxis: {
-        lines: { show: false }
-      },
-      padding: {
-        top: 5,
-        bottom: -25
+    tooltip: {
+      shared: false,
+      y: {
+        formatter: function (val) {
+          return Math.abs(val) + "%"
+        }
       }
     },
-    legend: { show: false },
-    dataLabels: { enabled: false },
-    states: {
-      hover: {
-        filter: { type: 'none' }
+    title: {
+      text: ''
+    },
+    xaxis: {
+      categories: ['85+', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
+        '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9',
+        '0-4'
+      ],
+      title: {
+        text: 'Percentage'
       },
-      active: {
-        filter: { type: 'none' }
-      }
-    }
+    },
+    colors: ['rgba(255, 255, 0, 0.8)', hexToRGBA('#836FFF', 1)],
   }
 
   return (
     <Card>
       <Grid container>
-        <StyledGrid item xs={12} sm={7}>
-          <CardHeader title='Total Transactions' titleTypographyProps={{ sx: { letterSpacing: '0.15px' } }} />
+        <StyledGrid item xs={12} sm={12}>
+          <CardHeader title='Total Electors by Age' titleTypographyProps={{ sx: { letterSpacing: '0.15px' } }} />
           <CardContent
             sx={{
               '& .apexcharts-series[rel="2"]': {
@@ -118,74 +112,9 @@ const AnalyticsTotalTransactions = () => {
               }
             }}
           >
-            <ReactApexcharts type='bar' height={278} series={series} options={options} />
+            <ReactApexcharts type='bar' height={475} series={series} options={options} />
           </CardContent>
         </StyledGrid>
-        <Grid item xs={12} sm={5}>
-          <CardHeader
-            title='Report'
-            subheader='Last month transactions $234.40k'
-            subheaderTypographyProps={{ sx: { lineHeight: 1.429 } }}
-            titleTypographyProps={{ sx: { letterSpacing: '0.15px' } }}
-            action={
-              <OptionsMenu
-                options={['Last 28 Days', 'Last Month', 'Last Year']}
-                iconButtonProps={{ size: 'small', className: 'card-more-options' }}
-              />
-            }
-          />
-          <CardContent sx={{ pt: theme => `${theme.spacing(6)} !important` }}>
-            <Grid container>
-              <Grid
-                item
-                xs={6}
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  flexDirection: 'column',
-                  borderRight: theme => `1px solid ${theme.palette.divider}`
-                }}
-              >
-                <CustomAvatar skin='light' sx={{ mb: 3 }} color='success' variant='rounded'>
-                  <Icon icon='mdi:trending-up' />
-                </CustomAvatar>
-                <Typography sx={{ mb: 0.5 }} variant='body2'>
-                  This Week
-                </Typography>
-                <Typography sx={{ fontWeight: 600 }}>+82.45%</Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                <CustomAvatar skin='light' sx={{ mb: 3 }} variant='rounded'>
-                  <Icon icon='mdi:trending-down' />
-                </CustomAvatar>
-                <Typography sx={{ mb: 0.5 }} variant='body2'>
-                  Last Week
-                </Typography>
-                <Typography sx={{ fontWeight: 600 }}>-24.86%</Typography>
-              </Grid>
-            </Grid>
-            <Divider
-              sx={{ mt: theme => `${theme.spacing(10)} !important`, mb: theme => `${theme.spacing(7.5)} !important` }}
-            />
-            <Grid container>
-              <Grid
-                item
-                xs={6}
-                sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center' }}
-              >
-                <Typography sx={{ mb: 0.5 }} variant='body2'>
-                  Performance
-                </Typography>
-                <Typography sx={{ fontWeight: 600 }}>+94.15%</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Button fullWidth variant='contained'>
-                  View Report
-                </Button>
-              </Grid>
-            </Grid>
-          </CardContent>
-        </Grid>
       </Grid>
     </Card>
   )
