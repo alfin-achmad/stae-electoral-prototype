@@ -1,25 +1,19 @@
 // ** MUI Imports
-import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import { useTheme } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
-import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
 // ** Icon Imports
-import Icon from 'src/@core/components/icon'
 
 // ** Third Party Imports
 import { ApexOptions } from 'apexcharts'
 
 // ** Custom Components Imports
-import CustomAvatar from 'src/@core/components/mui/avatar'
 import OptionsMenu from 'src/@core/components/option-menu'
 import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
 const EcommerceVisitsByDay = () => {
   // ** Hook
-  const theme = useTheme()
 
   const options: ApexOptions = {
     chart: {
@@ -31,30 +25,19 @@ const EcommerceVisitsByDay = () => {
       bar: {
         borderRadius: 0,
         distributed: true,
-        columnWidth: '55%',
+        columnWidth: '70%',
         endingShape: 'rounded',
         startingShape: 'rounded'
       }
     },
-    legend: { show: false },
-    dataLabels: { enabled: false },
-    states: {
-      hover: {
-        filter: { type: 'none' }
-      },
-      active: {
-        filter: { type: 'none' }
-      }
-    },
+    legend: { show: true },
+    dataLabels: { enabled: true },
     xaxis: {
       axisTicks: { show: false },
       axisBorder: { show: false },
       categories: ['Aileu', 'Ainaro', 'Baucau', 'Bobonaro', 'Covalima', 'Dili', 'Ermera', 'Lautem', 'Liquica', 'Manatuto', 'Manufahi', 'RAEOA', 'Viqueque', 'Australia', 'South of Korea', 'Indonesia', 'UK', 'North Irland', 'Portugal'],
-      labels: {
-        style: { colors: theme.palette.text.disabled }
-      }
     },
-    yaxis: { show: false },
+    yaxis: { show: true },
     colors: [
       'rgba(255, 0, 0, 0.5)',
       'rgba(0, 255, 0, 0.7)',
@@ -76,7 +59,7 @@ const EcommerceVisitsByDay = () => {
       'rgba(255, 128, 255, 0.4)'
     ],
     grid: {
-      show: false,
+      show: true,
       padding: {
         top: -15,
         left: -7,
@@ -100,16 +83,7 @@ const EcommerceVisitsByDay = () => {
         }
       />
       <CardContent>
-        <ReactApexcharts type='bar' height={400} options={options} series={[{ data: [62105, 44735, 46293, 23750, 40826, 55094, 58892, 29321, 48982, 50805, 39380, 42684, 47452, 32920, 49961, 40764, 33199, 42459, 45750]}]} />
-        <Box sx={{ mt: 5, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-            <Typography sx={{ mb: 0.75, fontWeight: 600 }}>Most Visited Day</Typography>
-            <Typography variant='body2'>Total 62.4k Visits on Thursday</Typography>
-          </Box>
-          <CustomAvatar skin='light' variant='rounded'>
-            <Icon icon='mdi:chevron-right' />
-          </CustomAvatar>
-        </Box>
+        <ReactApexcharts type='bar' height={450} options={options} series={[{ data: [62105, 44735, 46293, 23750, 40826, 55094, 58892, 29321, 48982, 50805, 39380, 42684, 47452, 32920, 49961, 40764, 33199, 42459, 45750]}]} />
       </CardContent>
     </Card>
   )

@@ -44,7 +44,8 @@ const AnalyticsTotalTransactions = () => {
     chart: {
       type: 'bar',
       height: 600,
-      stacked: true
+      stacked: true,
+      toolbar: { show: false }
     },
     plotOptions: {
       bar: {
@@ -55,8 +56,9 @@ const AnalyticsTotalTransactions = () => {
         startingShape: 'rounded'
       }
     },
+    legend: { show: true },
     dataLabels: {
-      enabled: false
+      enabled: true
     },
     stroke: {
       width: 1,

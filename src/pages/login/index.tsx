@@ -37,6 +37,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {useAuth} from "../../hooks/useAuth";
 import * as yup from "yup";
 import FormHelperText from "@mui/material/FormHelperText";
+import Image from "next/image";
 
 const FormControlLabel = styled(MuiFormControlLabel)<FormControlLabelProps>(({ theme }) => ({
   '& .MuiFormControlLabel-label': {
@@ -96,9 +97,12 @@ const LoginPage = () => {
   return (
     <Box className='content-center'>
       <Card sx={{ zIndex: 1 }}>
-        <CardContent sx={{ p: theme => `${theme.spacing(13, 7, 6.5)} !important` }}>
+        <CardContent sx={{ p: theme => `${theme.spacing(8, 7, 6.5)} !important` }}>
+          <Box sx={{ mb: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Image src="/images/logo-stae.png" alt='logo STAE' width={125} height={125} />
+          </Box>
           <Box sx={{ mb: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Typography variant='h6' sx={{ ml: 2, lineHeight: 1, fontWeight: 700, fontSize: '1.5rem !important' }}>
+            <Typography variant='h6' sx={{ ml: 0, lineHeight: 1, fontWeight: 700, fontSize: '1.5rem !important' }}>
               {themeConfig.templateName}
             </Typography>
           </Box>
