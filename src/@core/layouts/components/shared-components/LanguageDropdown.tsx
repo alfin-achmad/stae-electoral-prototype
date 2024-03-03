@@ -25,7 +25,7 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
   // ** Vars
   const { layout } = settings
 
-  const handleLangItemClick = (lang: 'en' | 'fr' | 'ar') => {
+  const handleLangItemClick = (lang: 'en' | 'id' | 'tl' | 'pt') => {
     i18n.changeLanguage(lang)
   }
 
@@ -36,7 +36,7 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
 
   return (
     <OptionsMenu
-      icon={<Icon icon='mdi:translate' />}
+      icon={<Icon icon='mdi:web' />}
       menuProps={{ sx: { '& .MuiMenu-paper': { mt: 4, minWidth: 130 } } }}
       iconButtonProps={{ color: 'inherit', sx: { ...(layout === 'vertical' ? { mr: 0.75 } : { mx: 0.75 }) } }}
       options={[
@@ -52,24 +52,35 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
           }
         },
         {
-          text: 'French',
+          text: 'Indonesia',
           menuItemProps: {
             sx: { py: 2 },
-            selected: i18n.language === 'fr',
+            selected: i18n.language === 'id',
             onClick: () => {
-              handleLangItemClick('fr')
+              handleLangItemClick('id')
               saveSettings({ ...settings, direction: 'ltr' })
             }
           }
         },
         {
-          text: 'Arabic',
+          text: 'Tetun Timor',
           menuItemProps: {
             sx: { py: 2 },
-            selected: i18n.language === 'ar',
+            selected: i18n.language === 'tl',
             onClick: () => {
-              handleLangItemClick('ar')
-              saveSettings({ ...settings, direction: 'rtl' })
+              handleLangItemClick('tl')
+              saveSettings({ ...settings, direction: 'ltr' })
+            }
+          }
+        },
+        {
+          text: 'Portuguese',
+          menuItemProps: {
+            sx: { py: 2 },
+            selected: i18n.language === 'pt',
+            onClick: () => {
+              handleLangItemClick('pt')
+              saveSettings({ ...settings, direction: 'ltr' })
             }
           }
         }
