@@ -89,7 +89,7 @@ const EcommerceVisitsByDay = () => {
     <Card>
       <CardHeader
         title='Total Electors Per Districts'
-        subheader='Period 1 June - 30 Decembre 2023'
+        subheader='Period 1 June - 30 December 2023'
         subheaderTypographyProps={{ sx: { lineHeight: 1.429 } }}
         titleTypographyProps={{ sx: { letterSpacing: '0.15px' } }}
         action={

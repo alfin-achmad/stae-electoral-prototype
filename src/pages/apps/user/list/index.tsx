@@ -3,7 +3,7 @@ import { useState, useEffect, MouseEvent, useCallback } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
-import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
+import { GetStaticProps } from 'next/types'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
@@ -16,11 +16,7 @@ import MenuItem from '@mui/material/MenuItem'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
-import InputLabel from '@mui/material/InputLabel'
-import FormControl from '@mui/material/FormControl'
-import CardContent from '@mui/material/CardContent'
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
-import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -31,7 +27,6 @@ import { useDispatch, useSelector } from 'react-redux'
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 import CustomAvatar from 'src/@core/components/mui/avatar'
-import CardStatisticsHorizontal from 'src/@core/components/card-statistics/card-stats-horizontal'
 
 // ** Utils Import
 import { getInitials } from 'src/@core/utils/get-initials'
@@ -47,7 +42,6 @@ import { RootState, AppDispatch } from 'src/store'
 import { CardStatsType } from 'src/@fake-db/types'
 import { ThemeColor } from 'src/@core/layouts/types'
 import { UsersType } from 'src/types/apps/userTypes'
-import { CardStatsHorizontalProps } from 'src/@core/components/card-statistics/types'
 
 // ** Custom Table Components Imports
 import TableHeader from 'src/views/apps/user/list/TableHeader'
@@ -262,12 +256,12 @@ const columns: GridColDef[] = [
   }
 ]
 
-const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const UserList = () => {
   // ** State
-  const [role, setRole] = useState<string>('')
-  const [plan, setPlan] = useState<string>('')
+  const [role] = useState<string>('')
+  const [plan] = useState<string>('')
   const [value, setValue] = useState<string>('')
-  const [status, setStatus] = useState<string>('')
+  const [status] = useState<string>('')
   const [addUserOpen, setAddUserOpen] = useState<boolean>(false)
   const [paginationModel, setPaginationModel] = useState({ page: 0, pageSize: 10 })
 
@@ -290,102 +284,13 @@ const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) =
     setValue(val)
   }, [])
 
-  const handleRoleChange = useCallback((e: SelectChangeEvent) => {
-    setRole(e.target.value)
-  }, [])
-
-  const handlePlanChange = useCallback((e: SelectChangeEvent) => {
-    setPlan(e.target.value)
-  }, [])
-
-  const handleStatusChange = useCallback((e: SelectChangeEvent) => {
-    setStatus(e.target.value)
-  }, [])
-
   const toggleAddUserDrawer = () => setAddUserOpen(!addUserOpen)
 
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
-        {apiData && (
-          <Grid container spacing={6}>
-            {apiData.statsHorizontal.map((item: CardStatsHorizontalProps, index: number) => {
-              return (
-                <Grid item xs={12} md={3} sm={6} key={index}>
-                  <CardStatisticsHorizontal {...item} icon={<Icon icon={item.icon as string} />} />
-                </Grid>
-              )
-            })}
-          </Grid>
-        )}
-      </Grid>
-      <Grid item xs={12}>
         <Card>
-          <CardHeader title='Search Filters' sx={{ pb: 4, '& .MuiCardHeader-title': { letterSpacing: '.15px' } }} />
-          <CardContent>
-            <Grid container spacing={6}>
-              <Grid item sm={4} xs={12}>
-                <FormControl fullWidth>
-                  <InputLabel id='role-select'>Select Role</InputLabel>
-                  <Select
-                    fullWidth
-                    value={role}
-                    id='select-role'
-                    label='Select Role'
-                    labelId='role-select'
-                    onChange={handleRoleChange}
-                    inputProps={{ placeholder: 'Select Role' }}
-                  >
-                    <MenuItem value=''>Select Role</MenuItem>
-                    <MenuItem value='admin'>Admin</MenuItem>
-                    <MenuItem value='author'>Author</MenuItem>
-                    <MenuItem value='editor'>Editor</MenuItem>
-                    <MenuItem value='maintainer'>Maintainer</MenuItem>
-                    <MenuItem value='subscriber'>Subscriber</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid item sm={4} xs={12}>
-                <FormControl fullWidth>
-                  <InputLabel id='plan-select'>Select Plan</InputLabel>
-                  <Select
-                    fullWidth
-                    value={plan}
-                    id='select-plan'
-                    label='Select Plan'
-                    labelId='plan-select'
-                    onChange={handlePlanChange}
-                    inputProps={{ placeholder: 'Select Plan' }}
-                  >
-                    <MenuItem value=''>Select Plan</MenuItem>
-                    <MenuItem value='basic'>Basic</MenuItem>
-                    <MenuItem value='company'>Company</MenuItem>
-                    <MenuItem value='enterprise'>Enterprise</MenuItem>
-                    <MenuItem value='team'>Team</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid item sm={4} xs={12}>
-                <FormControl fullWidth>
-                  <InputLabel id='status-select'>Select Status</InputLabel>
-                  <Select
-                    fullWidth
-                    value={status}
-                    id='select-status'
-                    label='Select Status'
-                    labelId='status-select'
-                    onChange={handleStatusChange}
-                    inputProps={{ placeholder: 'Select Role' }}
-                  >
-                    <MenuItem value=''>Select Role</MenuItem>
-                    <MenuItem value='pending'>Pending</MenuItem>
-                    <MenuItem value='active'>Active</MenuItem>
-                    <MenuItem value='inactive'>Inactive</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-            </Grid>
-          </CardContent>
+          <CardHeader title='Master Users' sx={{ pb: 4, '& .MuiCardHeader-title': { letterSpacing: '.15px' } }} />
           <Divider />
           <TableHeader value={value} handleFilter={handleFilter} toggle={toggleAddUserDrawer} />
           <DataGrid

@@ -27,7 +27,7 @@ const EcommerceDashboard = () => {
                 stats: '400.000',
                 title: 'Male Electors',
                 chipColor: 'primary',
-                chipText: 'Period 1 June - 30 Decembre 2023',
+                chipText: 'Period 1 June - 30 December 2023',
                 src: '/images/cards/card-stats-img-1.png'
               }}
             />
@@ -38,7 +38,7 @@ const EcommerceDashboard = () => {
                 stats: '450.000',
                 title: 'Female Electors',
                 chipColor: 'primary',
-                chipText: 'Period 1 June - 30 Decembre 2023',
+                chipText: 'Period 1 June - 30 December 2023',
                 src: '/images/cards/card-stats-img-2.png'
               }}
             />

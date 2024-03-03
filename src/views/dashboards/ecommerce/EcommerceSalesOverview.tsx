@@ -81,7 +81,7 @@ const EcommerceSalesOverview = () => {
         subheader={
           <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { color: 'success.main' } }}>
             <Typography variant='caption' sx={{ mr: 1.5 }}>
-              Period 1 June - 30 Decembre 2023
+              Period 1 June - 30 December 2023
             </Typography>
           </Box>
         }
