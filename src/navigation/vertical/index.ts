@@ -25,22 +25,22 @@ const navigation = (): VerticalNavItemsType => {
     {
       title: 'Regions',
       icon: 'mdi:compass-outline',
-      path: '/tables/mui'
+      path: '/apps/regions/list'
     },
     {
       title: 'Directors',
       icon: 'mdi:account-tie',
-      path: '/tables/mui'
+      path: '/apps/directors/list'
     },
     {
       title: 'Countries',
       icon: 'mdi:earth',
-      path: '/apps/calendar'
+      path: '/apps/countries/list'
     },
     {
       title: 'Workstations',
       icon: 'mdi:desktop-classic',
-      path: '/apps/calendar'
+      path: '/apps/workstations/list'
     },
     {
       title: 'Electors',

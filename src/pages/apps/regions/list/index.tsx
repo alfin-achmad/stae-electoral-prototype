@@ -50,8 +50,8 @@ import { UsersType } from 'src/types/apps/userTypes'
 import { CardStatsHorizontalProps } from 'src/@core/components/card-statistics/types'
 
 // ** Custom Table Components Imports
-import TableHeader from 'src/views/apps/user/list/TableHeader'
-import AddUserDrawer from 'src/views/apps/user/list/AddUserDrawer'
+import TableHeader from 'src/views/apps/region/list/TableHeader'
+import AddRegionDrawer from 'src/views/apps/region/list/AddRegionDrawer'
 
 interface UserRoleType {
   [key: string]: { icon: string; color: string }
@@ -268,7 +268,7 @@ const RegionList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>)
   const [plan, setPlan] = useState<string>('')
   const [value, setValue] = useState<string>('')
   const [status, setStatus] = useState<string>('')
-  const [addUserOpen, setAddUserOpen] = useState<boolean>(false)
+  const [addRegionOpen, setAddRegionOpen] = useState<boolean>(false)
   const [paginationModel, setPaginationModel] = useState({ page: 0, pageSize: 10 })
 
   // ** Hooks
@@ -302,7 +302,7 @@ const RegionList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>)
     setStatus(e.target.value)
   }, [])
 
-  const toggleAddUserDrawer = () => setAddUserOpen(!addUserOpen)
+  const toggleAddRegionDrawer = () => setAddRegionOpen(!addRegionOpen)
 
   return (
     <Grid container spacing={6}>
@@ -387,7 +387,7 @@ const RegionList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>)
             </Grid>
           </CardContent>
           <Divider />
-          <TableHeader value={value} handleFilter={handleFilter} toggle={toggleAddUserDrawer} />
+          <TableHeader value={value} handleFilter={handleFilter} toggle={toggleAddRegionDrawer} />
           <DataGrid
             autoHeight
             rows={store.data}
@@ -402,7 +402,7 @@ const RegionList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>)
         </Card>
       </Grid>
 
-      <AddUserDrawer open={addUserOpen} toggle={toggleAddUserDrawer} />
+      <AddRegionDrawer open={addRegionOpen} toggle={toggleAddRegionDrawer} />
     </Grid>
   )
 }
