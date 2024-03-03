@@ -10,16 +10,11 @@ import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
 // ** Demo Components Imports
 import EcommerceTable from 'src/views/dashboards/ecommerce/EcommerceTable'
-import EcommerceTotalVisits from 'src/views/dashboards/ecommerce/EcommerceTotalVisits'
 import EcommerceVisitsByDay from 'src/views/dashboards/ecommerce/EcommerceVisitsByDay'
-import EcommerceLiveVisitors from 'src/views/dashboards/ecommerce/EcommerceLiveVisitors'
 import EcommerceSalesOverview from 'src/views/dashboards/ecommerce/EcommerceSalesOverview'
-import EcommerceWeeklySalesBg from 'src/views/dashboards/ecommerce/EcommerceWeeklySalesBg'
 import EcommerceSalesThisMonth from 'src/views/dashboards/ecommerce/EcommerceSalesThisMonth'
-import EcommerceMarketingSales from 'src/views/dashboards/ecommerce/EcommerceMarketingSales'
 import EcommerceActivityTimeline from 'src/views/dashboards/ecommerce/EcommerceActivityTimeline'
 import EcommerceImpressionsOrders from 'src/views/dashboards/ecommerce/EcommerceImpressionsOrders'
-import EcommerceSalesOverviewWithTabs from 'src/views/dashboards/ecommerce/EcommerceSalesOverviewWithTabs'
 
 const EcommerceDashboard = () => {
   return (
@@ -54,34 +49,19 @@ const EcommerceDashboard = () => {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={6}>
-            <EcommerceWeeklySalesBg />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <EcommerceTotalVisits />
-          </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <EcommerceSalesThisMonth />
           </Grid>
           <Grid item xs={12} md={6}>
             <EcommerceActivityTimeline />
           </Grid>
-          <Grid item xs={12} md={6}>
-            <EcommerceSalesOverviewWithTabs />
-          </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <EcommerceImpressionsOrders />
           </Grid>
-          <Grid item xs={12} md={5} sx={{ order: [2, 2, 1] }}>
-            <EcommerceMarketingSales />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} sx={{ order: [1, 1, 2] }}>
-            <EcommerceLiveVisitors />
-          </Grid>
-          <Grid item xs={12} md={8} sx={{ order: 3 }}>
+          <Grid item xs={12} md={9} sx={{ order: 3 }}>
             <EcommerceTable />
           </Grid>
-          <Grid item xs={12} md={4} sx={{ order: 3 }}>
+          <Grid item xs={12} md={3} sx={{ order: 3 }}>
             <EcommerceVisitsByDay />
           </Grid>
         </Grid>

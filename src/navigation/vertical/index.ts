@@ -15,7 +15,12 @@ const navigation = (): VerticalNavItemsType => {
     {
       title: 'Users',
       icon: 'mdi:account-multiple',
-      path: '/tables/mui'
+      path: '/apps/user/list'
+    },
+    {
+      title: 'Roles',
+      icon: 'mdi:shield-outline',
+      path: '/apps/roles'
     },
     {
       title: 'Regions',

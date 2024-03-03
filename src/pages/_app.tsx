@@ -126,7 +126,7 @@ const App = (props: ExtendedAppProps) => {
             name='description'
             content='STAE - Secretariado Técnico de Administração Eleitoral | Electoral'
           />
-          <meta name='keywords' content='Material Design, MUI, Admin Template, React Admin Template' />
+          <meta name='keywords' content='STAE, Secretariado Técnico de Administração Eleitoral, STAETL' />
           <meta name='viewport' content='initial-scale=1, width=device-width' />
         </Head>
 
