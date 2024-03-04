@@ -16,14 +16,9 @@ import ReactApexcharts from 'src/@core/components/react-apexcharts'
 // ** Util Import
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
-const series = [{
-  name: 'Males',
-  data: [0.4, 0.65, 0.76, 0.88, 1.5, 2.1, 2.9, 3.8, 3.9, 4.2, 4, 4.3, 4.1, 4.2, 4.5,0, 0, 0]
-},
-  {
-    name: 'Females',
-    data: [-0.8, -1.05, -1.06, -1.18, -1.4, -2.2, -2.85, -3.7, -3.96, -4.22, -4.3, -4.4,-4.1, -4, -4.1, 0, 0, 0]
-  }
+const series = [
+  {data: [95000, 165000, 105000, 45000, 10000], name: 'Male'},
+  {data: [105000, 155000, 125000, 30000, 15000], name: 'Female'},
 ]
 
 // Styled Grid component
@@ -51,14 +46,19 @@ const AnalyticsTotalTransactions = () => {
       bar: {
         borderRadius: 0,
         horizontal: true,
-        endingShape: 'flat',
-        barHeight: '100%',
-        startingShape: 'rounded'
+        dataLabels: {
+          position: 'top',
+        },
       }
     },
     legend: { show: true },
     dataLabels: {
-      enabled: true
+      enabled: true,
+      offsetX: -6,
+      style: {
+        fontSize: '12px',
+        colors: ['#fff']
+      }
     },
     stroke: {
       width: 1,
@@ -72,29 +72,11 @@ const AnalyticsTotalTransactions = () => {
         }
       }
     },
-    yaxis: {
-      min: -5,
-      max: 5,
-      title: {
-        // text: 'Age',
-      },
-    },
-    tooltip: {
-      shared: false,
-      y: {
-        formatter: function (val) {
-          return Math.abs(val) + "%"
-        }
-      }
-    },
     title: {
       text: ''
     },
     xaxis: {
-      categories: ['85+', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
-        '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9',
-        '0-4'
-      ],
+      categories: ['17-21', '21-35', '35-45', '45-55', '55 =>'],
       title: {
         text: 'Percentage'
       },

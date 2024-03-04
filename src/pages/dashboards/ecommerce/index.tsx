@@ -43,10 +43,10 @@ const EcommerceDashboard = () => {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={9} sx={{ order: 3 }} height={600}>
+          <Grid item xs={12} md={12} sx={{ order: 3 }} height={600}>
             <EcommerceVisitsByDay />
           </Grid>
-          <Grid item xs={12} md={3} sx={{ order: 3 }} height={600}>
+          <Grid item xs={12} md={12} sx={{ order: 3 }} height={600}>
             <AnalyticsTotalTransactions />
           </Grid>
         </Grid>
