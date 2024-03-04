@@ -71,7 +71,7 @@ const EcommerceVisitsByDay = () => {
   return (
     <Card>
       <CardHeader
-        title='Total Electors Per Districts'
+        title='Total Electors Per Municipiu'
         subheader='Period 1 June - 30 December 2023'
         subheaderTypographyProps={{ sx: { lineHeight: 1.429 } }}
         titleTypographyProps={{ sx: { letterSpacing: '0.15px' } }}
@@ -83,7 +83,7 @@ const EcommerceVisitsByDay = () => {
         }
       />
       <CardContent>
-        <ReactApexcharts type='bar' height={450} options={options} series={[{ data: [62105, 44735, 46293, 23750, 40826, 55094, 58892, 29321, 48982, 50805, 39380, 42684, 47452, 32920, 49961, 40764, 33199, 42459, 45750]}]} />
+        <ReactApexcharts type='bar' height={450} options={options} series={[{ data: [40000, 45000, 120000, 55000, 55000, 165000, 55000, 45000, 45000, 45000, 45000, 45000, 50000, 10000, 5000, 5000, 5000, 5000, 10000]}]} />
       </CardContent>
     </Card>
   )
