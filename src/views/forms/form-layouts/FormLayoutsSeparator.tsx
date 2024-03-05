@@ -303,10 +303,61 @@ const FormLayoutsSeparator = () => {
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
+                  <Grid container spacing={1}>
+                    <Grid item xs={4} sm={5}>
+                      <TextField fullWidth label='Officers' placeholder='' />
+                    </Grid>
+                    <Grid item xs={4} sm={1}>
+                      <TextField fullWidth label='Date' placeholder='' />
+                    </Grid>
+                    <Grid item xs={4} sm={12}></Grid>
+                    <Grid item xs={2} sm={5}>
+                      <TextField fullWidth label='Corrector' placeholder='' />
+                    </Grid>
+                    <Grid item xs={4} sm={1}>
+                      <TextField fullWidth label='Date' placeholder='' />
+                    </Grid>
+
+                    <Grid item xs={4} sm={12}></Grid>
+
+                    <Grid item xs={2} sm={5}>
+                      <TextField fullWidth label='District Input' placeholder='' />
+                    </Grid>
+                    <Grid item xs={2} sm={5}>
+                      <TextField fullWidth label='District Edit' placeholder='' />
+                    </Grid>
+                  </Grid>
+                </Grid>
+
+                <Grid item xs={12}>
                   <Typography variant='body2' sx={{ fontWeight: 600 }}>
                     4. Document
                   </Typography>
                 </Grid>
+                <Grid item xs={12}>
+                  <Grid container spacing={1}>
+                    <Grid item xs={4} sm={5}>
+                      <TextField fullWidth label='Identity' placeholder='' />
+                    </Grid>
+                    <Grid item xs={4} sm={12}></Grid>
+                    <Grid item xs={2} sm={10}>
+                      <TextField fullWidth label='Name' placeholder='' />
+                    </Grid>
+
+                    <Grid item xs={4} sm={12}></Grid>
+
+                    <Grid item xs={2} sm={10}>
+                      <TextField fullWidth label='No.' placeholder='' />
+                    </Grid>
+                    <Grid item xs={2} sm={5}>
+                      <TextField fullWidth label='Published' placeholder='' />
+                    </Grid>
+                    <Grid item xs={2} sm={1}>
+                      <TextField fullWidth label='Date' placeholder='' />
+                    </Grid>
+                  </Grid>
+                </Grid>
+
                 <Grid item xs={12}>
                   <Typography variant='body2' sx={{ fontWeight: 600 }}>
                     5. Evidence
