@@ -11,6 +11,8 @@ import type { AppProps } from 'next/app'
 import { store } from 'src/store'
 import { Provider } from 'react-redux'
 
+import 'devextreme/dist/css/dx.light.css';
+
 // ** Loader Import
 import NProgress from 'nprogress'
 
