@@ -48,11 +48,11 @@ const navigation = (): VerticalNavItemsType => {
       children: [
         {
           title: 'List',
-          path: '/apps/invoice/list'
+          path: '/apps/electors/list'
         },
         {
           title: 'Register',
-          path: '/apps/invoice/add'
+          path: '/apps/electors/register'
         }
       ]
     },
