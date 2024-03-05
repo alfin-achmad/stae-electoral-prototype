@@ -18,15 +18,222 @@ import OutlinedInput from '@mui/material/OutlinedInput'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Third Party Imports
-// ** import DatePicker from 'react-datepicker'
+import DatePicker from 'react-datepicker'
+import {DateType} from "../../../types/forms/reactDatepickerTypes";
+import CustomInput from "../form-elements/pickers/PickersCustomInput";
 
 const FormLayoutsSeparator = () => {
-  const [language, setLanguage] = useState<string[]>([])
+  const [district, setDistrict] = useState<string[]>([])
+  const [subDistrict, setSubDistrict] = useState<string[]>([])
+  const [succo, setSucco] = useState<string[]>([])
+  const [aldeia, setAldeia] = useState<string[]>([])
+  const [date, setDate] = useState<DateType>(new Date())
 
   // Handle Select
-  const handleSelectChange = (event: SelectChangeEvent<string[]>) => {
-    setLanguage(event.target.value as string[])
+  const handleSelectChange = (event: SelectChangeEvent<string[]>, typeSelect: string) => {
+    const listType: any = {
+      "district": () => setDistrict(event.target.value as string[]),
+      "subDistrict": () => setSubDistrict(event.target.value as string[]),
+      "succo": () => setSucco(event.target.value as string[]),
+      "aldeia": () => setAldeia(event.target.value as string[]),
+    }
+
+    return listType[typeSelect]()
   }
+
+  const recordDistrict = [
+    {
+      "id": 1,
+      "fullName": "Aileu",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 2,
+      "fullName": "Ainaro",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 3,
+      "fullName": "Atauro",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 4,
+      "fullName": "Baucau",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 5,
+      "fullName": "Bobonaro",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 6,
+      "fullName": "Covalima",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 7,
+      "fullName": "Dili",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 8,
+      "fullName": "Ermera",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 9,
+      "fullName": "Lautem",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 10,
+      "fullName": "Liquica",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 11,
+      "fullName": "Manatuto",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 12,
+      "fullName": "Manufahi",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 13,
+      "fullName": "RAEOA",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+    {
+      "id": 14,
+      "fullName": "Viqueque",
+      "groupBy": "Domestic",
+      "summary": "",
+    },
+  ]
+
+  const recordSubDistrict = [
+    {
+      "id": 1,
+      "fullName": "Aileu",
+      "districtName": "Aileu",
+      "code": "0304",
+      "summary": "",
+    },
+    {
+      "id": 2,
+      "fullName": "Laulara",
+      "districtName": "Aileu",
+      "code": "0302",
+      "summary": "",
+    },
+    {
+      "id": 3,
+      "fullName": "Liquidoe",
+      "districtName": "Aileu",
+      "code": "0303",
+      "summary": "",
+    },
+    {
+      "id": 4,
+      "fullName": "Remeixo",
+      "districtName": "Aileu",
+      "code": "0301",
+      "summary": "",
+    },
+  ]
+
+  const recordSucco = [
+    {
+      "id": 1,
+      "fullName": "Aisirrimou",
+      "code": "030409",
+      "codeSubdistrict": "0304",
+      "summary": "",
+    },
+    {
+      "id": 2,
+      "fullName": "Bandudato",
+      "code": "030402",
+      "codeSubdistrict": "0304",
+      "summary": "",
+    },
+    {
+      "id": 3,
+      "fullName": "Fahria",
+      "code": "030411",
+      "codeSubdistrict": "0304",
+      "summary": "",
+    },
+    {
+      "id": 4,
+      "fullName": "Fatubossa",
+      "code": "030405",
+      "codeSubdistrict": "0304",
+      "summary": "",
+    },
+    {
+      "id": 5,
+      "fullName": "Hoholau",
+      "code": "030401",
+      "codeSubdistrict": "0304",
+      "summary": "",
+    },
+  ]
+
+  const recordAldeia = [
+    {
+      "id": 1,
+      "fullName": "Aituhullaran",
+      "code": "03040902",
+      "codeSubdistrict": "030409",
+      "summary": "",
+    },
+    {
+      "id": 2,
+      "fullName": "Bercati",
+      "code": "03040903",
+      "codeSubdistrict": "030409",
+      "summary": "",
+    },
+    {
+      "id": 3,
+      "fullName": "Bessilau",
+      "code": "03040904",
+      "codeSubdistrict": "030409",
+      "summary": "",
+    },
+    {
+      "id": 4,
+      "fullName": "Erkoatun",
+      "code": "03040905",
+      "codeSubdistrict": "030409",
+      "summary": "",
+    },
+    {
+      "id": 5,
+      "fullName": "Hudilaran",
+      "code": "03040906",
+      "codeSubdistrict": "030409",
+      "summary": "",
+    },
+  ]
 
   return (
     <Card>
@@ -49,19 +256,17 @@ const FormLayoutsSeparator = () => {
                         <InputLabel id='form-layouts-separator-multiple-select-label'>District</InputLabel>
                         <Select
                           multiple
-                          value={language}
-                          onChange={handleSelectChange}
+                          value={district}
+                          onChange={(e) => handleSelectChange(e, 'district')}
                           id='form-layouts-separator-multiple-select'
                           labelId='form-layouts-separator-multiple-select-label'
                           input={<OutlinedInput label='District' id='select-multiple-language' />}
                         >
-                          <MenuItem value='English'>English</MenuItem>
-                          <MenuItem value='French'>French</MenuItem>
-                          <MenuItem value='Spanish'>Spanish</MenuItem>
-                          <MenuItem value='Portuguese'>Portuguese</MenuItem>
-                          <MenuItem value='Italian'>Italian</MenuItem>
-                          <MenuItem value='German'>German</MenuItem>
-                          <MenuItem value='Arabic'>Arabic</MenuItem>
+                          {recordDistrict && recordDistrict.map((i) => {
+                            return (
+                              <MenuItem key={i.id} value={i.id}>{i.fullName}</MenuItem>
+                            )
+                          })}
                         </Select>
                       </FormControl>
                     </Grid>
@@ -73,19 +278,17 @@ const FormLayoutsSeparator = () => {
                         <InputLabel id='form-layouts-separator-multiple-select-label'>Succo</InputLabel>
                         <Select
                           multiple
-                          value={language}
-                          onChange={handleSelectChange}
+                          value={succo}
+                          onChange={(e) => handleSelectChange(e, 'succo')}
                           id='form-layouts-separator-multiple-select'
                           labelId='form-layouts-separator-multiple-select-label'
                           input={<OutlinedInput label='Succo' id='select-multiple-language' />}
                         >
-                          <MenuItem value='English'>English</MenuItem>
-                          <MenuItem value='French'>French</MenuItem>
-                          <MenuItem value='Spanish'>Spanish</MenuItem>
-                          <MenuItem value='Portuguese'>Portuguese</MenuItem>
-                          <MenuItem value='Italian'>Italian</MenuItem>
-                          <MenuItem value='German'>German</MenuItem>
-                          <MenuItem value='Arabic'>Arabic</MenuItem>
+                          {recordSucco && recordSucco.map((i) => {
+                            return (
+                              <MenuItem key={i.id} value={i.id}>{i.fullName}</MenuItem>
+                            )
+                          })}
                         </Select>
                       </FormControl>
                     </Grid>
@@ -100,19 +303,17 @@ const FormLayoutsSeparator = () => {
                         <InputLabel id='form-layouts-separator-multiple-select-label'>Sub District</InputLabel>
                         <Select
                           multiple
-                          value={language}
-                          onChange={handleSelectChange}
+                          value={subDistrict}
+                          onChange={(e) => handleSelectChange(e, 'subDistrict')}
                           id='form-layouts-separator-multiple-select'
                           labelId='form-layouts-separator-multiple-select-label'
                           input={<OutlinedInput label='Sub District' id='select-multiple-language' />}
                         >
-                          <MenuItem value='English'>English</MenuItem>
-                          <MenuItem value='French'>French</MenuItem>
-                          <MenuItem value='Spanish'>Spanish</MenuItem>
-                          <MenuItem value='Portuguese'>Portuguese</MenuItem>
-                          <MenuItem value='Italian'>Italian</MenuItem>
-                          <MenuItem value='German'>German</MenuItem>
-                          <MenuItem value='Arabic'>Arabic</MenuItem>
+                          {recordSubDistrict && recordSubDistrict.map((i) => {
+                            return (
+                              <MenuItem key={i.id} value={i.id}>{i.fullName}</MenuItem>
+                            )
+                          })}
                         </Select>
                       </FormControl>
                     </Grid>
@@ -124,19 +325,17 @@ const FormLayoutsSeparator = () => {
                         <InputLabel id='form-layouts-separator-multiple-select-label'>Aldeia</InputLabel>
                         <Select
                           multiple
-                          value={language}
-                          onChange={handleSelectChange}
+                          value={aldeia}
+                          onChange={(e) => handleSelectChange(e, 'aldeia')}
                           id='form-layouts-separator-multiple-select'
                           labelId='form-layouts-separator-multiple-select-label'
                           input={<OutlinedInput label='Aldeia' id='select-multiple-language' />}
                         >
-                          <MenuItem value='English'>English</MenuItem>
-                          <MenuItem value='French'>French</MenuItem>
-                          <MenuItem value='Spanish'>Spanish</MenuItem>
-                          <MenuItem value='Portuguese'>Portuguese</MenuItem>
-                          <MenuItem value='Italian'>Italian</MenuItem>
-                          <MenuItem value='German'>German</MenuItem>
-                          <MenuItem value='Arabic'>Arabic</MenuItem>
+                          {recordAldeia && recordAldeia.map((i) => {
+                            return (
+                              <MenuItem key={i.id} value={i.id}>{i.fullName}</MenuItem>
+                            )
+                          })}
                         </Select>
                       </FormControl>
                     </Grid>
@@ -163,13 +362,19 @@ const FormLayoutsSeparator = () => {
                     </Grid>
                     <Grid item xs={2} sm={2}></Grid>
                     <Grid item xs={2} sm={2}></Grid>
-                    <Grid item xs={2} sm={2}>
-                      <TextField fullWidth label='Date of Birth' placeholder='' />
+                    <Grid item xs={2} sm={2} sx={{mt: 1}}>
+                      <DatePicker
+                        selected={date}
+                        id='basic-input'
+                        placeholderText='Click to select a date'
+                        onChange={(date: Date) => setDate(date)}
+                        customInput={<CustomInput label='Date of Birth' />}
+                      />
                     </Grid>
-                    <Grid item xs={2} sm={2}>
+                    <Grid item xs={2} sm={2} sx={{mt: 1}}>
                       <TextField fullWidth label='Age' placeholder='' />
                     </Grid>
-                    <Grid item xs={2} sm={2}>
+                    <Grid item xs={2} sm={2} sx={{mt: 1}}>
                       <TextField fullWidth label='Gender' placeholder='' />
                     </Grid>
                     <Grid item xs={5} sm={8}>
@@ -195,19 +400,17 @@ const FormLayoutsSeparator = () => {
                             <InputLabel id='form-layouts-separator-multiple-select-label'>District</InputLabel>
                             <Select
                               multiple
-                              value={language}
-                              onChange={handleSelectChange}
+                              value={district}
+                              onChange={(e) => handleSelectChange(e, 'district')}
                               id='form-layouts-separator-multiple-select'
                               labelId='form-layouts-separator-multiple-select-label'
                               input={<OutlinedInput label='District' id='select-multiple-language' />}
                             >
-                              <MenuItem value='English'>English</MenuItem>
-                              <MenuItem value='French'>French</MenuItem>
-                              <MenuItem value='Spanish'>Spanish</MenuItem>
-                              <MenuItem value='Portuguese'>Portuguese</MenuItem>
-                              <MenuItem value='Italian'>Italian</MenuItem>
-                              <MenuItem value='German'>German</MenuItem>
-                              <MenuItem value='Arabic'>Arabic</MenuItem>
+                              {recordDistrict && recordDistrict.map((i) => {
+                                return (
+                                  <MenuItem key={i.id} value={i.id}>{i.fullName}</MenuItem>
+                                )
+                              })}
                             </Select>
                           </FormControl>
                         </Grid>
@@ -219,19 +422,17 @@ const FormLayoutsSeparator = () => {
                             <InputLabel id='form-layouts-separator-multiple-select-label'>Succo</InputLabel>
                             <Select
                               multiple
-                              value={language}
-                              onChange={handleSelectChange}
+                              value={succo}
+                              onChange={(e) => handleSelectChange(e, 'succo')}
                               id='form-layouts-separator-multiple-select'
                               labelId='form-layouts-separator-multiple-select-label'
                               input={<OutlinedInput label='Succo' id='select-multiple-language' />}
                             >
-                              <MenuItem value='English'>English</MenuItem>
-                              <MenuItem value='French'>French</MenuItem>
-                              <MenuItem value='Spanish'>Spanish</MenuItem>
-                              <MenuItem value='Portuguese'>Portuguese</MenuItem>
-                              <MenuItem value='Italian'>Italian</MenuItem>
-                              <MenuItem value='German'>German</MenuItem>
-                              <MenuItem value='Arabic'>Arabic</MenuItem>
+                              {recordSucco && recordSucco.map((i) => {
+                                return (
+                                  <MenuItem key={i.id} value={i.id}>{i.fullName}</MenuItem>
+                                )
+                              })}
                             </Select>
                           </FormControl>
                         </Grid>
@@ -246,19 +447,17 @@ const FormLayoutsSeparator = () => {
                             <InputLabel id='form-layouts-separator-multiple-select-label'>Sub District</InputLabel>
                             <Select
                               multiple
-                              value={language}
-                              onChange={handleSelectChange}
+                              value={subDistrict}
+                              onChange={(e) => handleSelectChange(e, 'subDistrict')}
                               id='form-layouts-separator-multiple-select'
                               labelId='form-layouts-separator-multiple-select-label'
                               input={<OutlinedInput label='Sub District' id='select-multiple-language' />}
                             >
-                              <MenuItem value='English'>English</MenuItem>
-                              <MenuItem value='French'>French</MenuItem>
-                              <MenuItem value='Spanish'>Spanish</MenuItem>
-                              <MenuItem value='Portuguese'>Portuguese</MenuItem>
-                              <MenuItem value='Italian'>Italian</MenuItem>
-                              <MenuItem value='German'>German</MenuItem>
-                              <MenuItem value='Arabic'>Arabic</MenuItem>
+                              {recordSubDistrict && recordSubDistrict.map((i) => {
+                                return (
+                                  <MenuItem key={i.id} value={i.id}>{i.fullName}</MenuItem>
+                                )
+                              })}
                             </Select>
                           </FormControl>
                         </Grid>
@@ -270,19 +469,17 @@ const FormLayoutsSeparator = () => {
                             <InputLabel id='form-layouts-separator-multiple-select-label'>Aldeia</InputLabel>
                             <Select
                               multiple
-                              value={language}
-                              onChange={handleSelectChange}
+                              value={aldeia}
+                              onChange={(e) => handleSelectChange(e, 'aldeia')}
                               id='form-layouts-separator-multiple-select'
                               labelId='form-layouts-separator-multiple-select-label'
                               input={<OutlinedInput label='Aldeia' id='select-multiple-language' />}
                             >
-                              <MenuItem value='English'>English</MenuItem>
-                              <MenuItem value='French'>French</MenuItem>
-                              <MenuItem value='Spanish'>Spanish</MenuItem>
-                              <MenuItem value='Portuguese'>Portuguese</MenuItem>
-                              <MenuItem value='Italian'>Italian</MenuItem>
-                              <MenuItem value='German'>German</MenuItem>
-                              <MenuItem value='Arabic'>Arabic</MenuItem>
+                              {recordAldeia && recordAldeia.map((i) => {
+                                return (
+                                  <MenuItem key={i.id} value={i.id}>{i.fullName}</MenuItem>
+                                )
+                              })}
                             </Select>
                           </FormControl>
                         </Grid>
@@ -307,15 +504,27 @@ const FormLayoutsSeparator = () => {
                     <Grid item xs={4} sm={5}>
                       <TextField fullWidth label='Officers' placeholder='' />
                     </Grid>
-                    <Grid item xs={4} sm={1}>
-                      <TextField fullWidth label='Date' placeholder='' />
+                    <Grid item xs={4} sm={2}>
+                      <DatePicker
+                        selected={date}
+                        id='basic-input'
+                        placeholderText='Click to select a date'
+                        onChange={(date: Date) => setDate(date)}
+                        customInput={<CustomInput label='Date' />}
+                      />
                     </Grid>
                     <Grid item xs={4} sm={12}></Grid>
                     <Grid item xs={2} sm={5}>
                       <TextField fullWidth label='Corrector' placeholder='' />
                     </Grid>
-                    <Grid item xs={4} sm={1}>
-                      <TextField fullWidth label='Date' placeholder='' />
+                    <Grid item xs={4} sm={2}>
+                      <DatePicker
+                        selected={date}
+                        id='basic-input'
+                        placeholderText='Click to select a date'
+                        onChange={(date: Date) => setDate(date)}
+                        customInput={<CustomInput label='Date' />}
+                      />
                     </Grid>
 
                     <Grid item xs={4} sm={12}></Grid>
@@ -352,8 +561,14 @@ const FormLayoutsSeparator = () => {
                     <Grid item xs={2} sm={5}>
                       <TextField fullWidth label='Published' placeholder='' />
                     </Grid>
-                    <Grid item xs={2} sm={1}>
-                      <TextField fullWidth label='Date' placeholder='' />
+                    <Grid item xs={2} sm={2}>
+                      <DatePicker
+                        selected={date}
+                        id='basic-input'
+                        placeholderText='Click to select a date'
+                        onChange={(date: Date) => setDate(date)}
+                        customInput={<CustomInput label='Date' />}
+                      />
                     </Grid>
                   </Grid>
                 </Grid>
