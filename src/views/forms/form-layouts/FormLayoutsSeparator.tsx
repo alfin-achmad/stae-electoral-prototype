@@ -178,7 +178,9 @@ const FormLayoutsSeparator = () => {
                     <Grid item xs={5} sm={8}>
                       <TextField fullWidth label="Mother's Name" placeholder='' />
                     </Grid>
-                    <Grid item xs={2} sm={12} sx={{mb: 3}} />
+                    <Grid item xs={2} sm={12}>
+                      <Divider sx={{ m: '10px 0px !important' }} />
+                    </Grid>
                     <Grid item xs={2} sm={2}>
                       <TextField fullWidth label='Births in East Timor ?' placeholder='' />
                     </Grid>
