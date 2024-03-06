@@ -129,7 +129,7 @@ const VerticalNavHeader = (props: Props) => {
         userNavMenuBranding(props)
       ) : (
         <LinkStyled href='/'>
-          <Image src="/images/logo-stae.png" alt='logo STAE' width={50} height={50} />
+          <Image src="/images/logo-stae-white.png" alt='logo STAE' width={50} height={50} />
           <HeaderTitle variant='h6' sx={{ ...menuCollapsedStyles, ...(navCollapsed && !navHover ? {} : { ml: 2 }) }}>
             {themeConfig.templateName}
           </HeaderTitle>

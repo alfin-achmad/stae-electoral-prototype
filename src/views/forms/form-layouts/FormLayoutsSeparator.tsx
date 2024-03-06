@@ -269,8 +269,8 @@ const FormLayoutsSeparator = () => {
             <Grid item xs={10}>
               <Grid container spacing={3}>
                 <Grid item xs={12}>
-                  <Typography variant='body2' sx={{ fontWeight: 600 }}>
-                    1. Residence
+                  <Typography variant='body2' sx={{ fontWeight: 'bolder' }}>
+                    I. Residence
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
@@ -369,8 +369,8 @@ const FormLayoutsSeparator = () => {
                   </Grid>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography variant='body2' sx={{ fontWeight: 600 }}>
-                    2. Personal Info
+                  <Typography variant='body2' sx={{ fontWeight: 'bolder' }}>
+                    II. Personal Info
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
@@ -519,8 +519,8 @@ const FormLayoutsSeparator = () => {
                 </Grid>
 
                 <Grid item xs={12}>
-                  <Typography variant='body2' sx={{ fontWeight: 600 }}>
-                    3. Register Information
+                  <Typography variant='body2' sx={{ fontWeight: 'bolder' }}>
+                    III. Register Information
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
@@ -563,8 +563,8 @@ const FormLayoutsSeparator = () => {
                 </Grid>
 
                 <Grid item xs={12}>
-                  <Typography variant='body2' sx={{ fontWeight: 600 }}>
-                    4. Document
+                  <Typography variant='body2' sx={{ fontWeight: 'bolder' }}>
+                    IV Document
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
@@ -598,15 +598,15 @@ const FormLayoutsSeparator = () => {
                 </Grid>
 
                 <Grid item xs={12}>
-                  <Typography variant='body2' sx={{ fontWeight: 600 }}>
-                    5. Evidence
+                  <Typography variant='body2' sx={{ fontWeight: 'bolder' }}>
+                    V. Evidence
                   </Typography>
                 </Grid>
               </Grid>
             </Grid>
             <Grid item xs={2} alignItems="flex-start">
               <Typography variant='body2' sx={{ fontWeight: 600 }}>
-                6. Data Digital
+                VI. Data Digital
               </Typography>
               <Box {...getRootProps({ className: 'dropzone' })} sx={files.length ? { height: 450 } : {}}>
                 <input {...getInputProps()} />
@@ -614,7 +614,7 @@ const FormLayoutsSeparator = () => {
                   img
                 ) : (
                   <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
-                    <Box sx={{ mb: 5, mt: 3, display: 'flex', flexDirection: 'column', justifyContent: 'center',  textAlign: ['center'], border: 1, borderColor: '#CCC', padding: 2, height: 100, width: 400 }}>
+                    <Box sx={{ mb: 5, mt: 3, display: 'flex', flexDirection: 'column', justifyContent: 'center',  textAlign: ['center'], border: 1, borderColor: '#CCC', padding: 2, height: 200, width: 150 }}>
                       <Typography>Click to Capture Photo</Typography>
                     </Box>
                   </Box>
@@ -627,7 +627,7 @@ const FormLayoutsSeparator = () => {
                   img
                 ) : (
                   <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
-                    <Box sx={{ mb: 5, display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: ['center'], border: 1, borderColor: '#CCC', padding: 2, height: 100, width: 400 }}>
+                    <Box sx={{ mb: 5, display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: ['center'], border: 1, borderColor: '#CCC', padding: 2, height: 200, width: 150 }}>
                       <Typography>Click to Capture Finger</Typography>
                     </Box>
                   </Box>
@@ -640,7 +640,7 @@ const FormLayoutsSeparator = () => {
                   img
                 ) : (
                   <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
-                    <Box sx={{ mb: 5, display: 'flex', flexDirection: 'column', justifyContent: 'center',  textAlign: ['center'], border: 1, borderColor: '#CCC', padding: 2, height: 100, width: 400 }}>
+                    <Box sx={{ mb: 5, display: 'flex', flexDirection: 'column', justifyContent: 'center',  textAlign: ['center'], border: 1, borderColor: '#CCC', padding: 2, height: 200, width: 150 }}>
                       <Typography>Click to Capture Signature</Typography>
                     </Box>
                   </Box>
@@ -648,195 +648,6 @@ const FormLayoutsSeparator = () => {
               </Box>
             </Grid>
           </Grid>
-          {/*<Grid container spacing={5} md={9}>*/}
-            {/*<Grid item xs={10}>*/}
-            {/*  <Typography variant='body2' sx={{ fontWeight: 600 }}>*/}
-            {/*    1. Residence*/}
-            {/*  </Typography>*/}
-            {/*  <Grid container sx={{mt: 2}} spacing={2}>*/}
-            {/*    <Grid item xs={12} sm={5}>*/}
-            {/*      <FormControl fullWidth>*/}
-            {/*        <InputLabel id='form-layouts-separator-multiple-select-label'>District</InputLabel>*/}
-            {/*        <Select*/}
-            {/*          multiple*/}
-            {/*          value={language}*/}
-            {/*          onChange={handleSelectChange}*/}
-            {/*          id='form-layouts-separator-multiple-select'*/}
-            {/*          labelId='form-layouts-separator-multiple-select-label'*/}
-            {/*          input={<OutlinedInput label='District' id='select-multiple-language' />}*/}
-            {/*        >*/}
-            {/*          <MenuItem value='English'>English</MenuItem>*/}
-            {/*          <MenuItem value='French'>French</MenuItem>*/}
-            {/*          <MenuItem value='Spanish'>Spanish</MenuItem>*/}
-            {/*          <MenuItem value='Portuguese'>Portuguese</MenuItem>*/}
-            {/*          <MenuItem value='Italian'>Italian</MenuItem>*/}
-            {/*          <MenuItem value='German'>German</MenuItem>*/}
-            {/*          <MenuItem value='Arabic'>Arabic</MenuItem>*/}
-            {/*        </Select>*/}
-            {/*      </FormControl>*/}
-            {/*    </Grid>*/}
-            {/*    <Grid item xs={3} sm={1}>*/}
-            {/*      <TextField fullWidth label='Code' placeholder='' />*/}
-            {/*    </Grid>*/}
-
-            {/*    <Grid item xs={12} sm={5}>*/}
-            {/*      <FormControl fullWidth>*/}
-            {/*        <InputLabel id='form-layouts-separator-multiple-select-label'>Succo</InputLabel>*/}
-            {/*        <Select*/}
-            {/*          multiple*/}
-            {/*          value={language}*/}
-            {/*          onChange={handleSelectChange}*/}
-            {/*          id='form-layouts-separator-multiple-select'*/}
-            {/*          labelId='form-layouts-separator-multiple-select-label'*/}
-            {/*          input={<OutlinedInput label='Succo' id='select-multiple-language' />}*/}
-            {/*        >*/}
-            {/*          <MenuItem value='English'>English</MenuItem>*/}
-            {/*          <MenuItem value='French'>French</MenuItem>*/}
-            {/*          <MenuItem value='Spanish'>Spanish</MenuItem>*/}
-            {/*          <MenuItem value='Portuguese'>Portuguese</MenuItem>*/}
-            {/*          <MenuItem value='Italian'>Italian</MenuItem>*/}
-            {/*          <MenuItem value='German'>German</MenuItem>*/}
-            {/*          <MenuItem value='Arabic'>Arabic</MenuItem>*/}
-            {/*        </Select>*/}
-            {/*      </FormControl>*/}
-            {/*    </Grid>*/}
-            {/*    <Grid item xs={3} sm={1}>*/}
-            {/*      <TextField fullWidth label='Code' placeholder='' />*/}
-            {/*    </Grid>*/}
-
-            {/*    <Grid item xs={12} sm={5}>*/}
-            {/*      <FormControl fullWidth>*/}
-            {/*        <InputLabel id='form-layouts-separator-multiple-select-label'>Sub District</InputLabel>*/}
-            {/*        <Select*/}
-            {/*          multiple*/}
-            {/*          value={language}*/}
-            {/*          onChange={handleSelectChange}*/}
-            {/*          id='form-layouts-separator-multiple-select'*/}
-            {/*          labelId='form-layouts-separator-multiple-select-label'*/}
-            {/*          input={<OutlinedInput label='Sub District' id='select-multiple-language' />}*/}
-            {/*        >*/}
-            {/*          <MenuItem value='English'>English</MenuItem>*/}
-            {/*          <MenuItem value='French'>French</MenuItem>*/}
-            {/*          <MenuItem value='Spanish'>Spanish</MenuItem>*/}
-            {/*          <MenuItem value='Portuguese'>Portuguese</MenuItem>*/}
-            {/*          <MenuItem value='Italian'>Italian</MenuItem>*/}
-            {/*          <MenuItem value='German'>German</MenuItem>*/}
-            {/*          <MenuItem value='Arabic'>Arabic</MenuItem>*/}
-            {/*        </Select>*/}
-            {/*      </FormControl>*/}
-            {/*    </Grid>*/}
-            {/*    <Grid item xs={3} sm={1}>*/}
-            {/*      <TextField fullWidth label='Code' placeholder='' />*/}
-            {/*    </Grid>*/}
-
-            {/*    <Grid item xs={12} sm={5}>*/}
-            {/*      <FormControl fullWidth>*/}
-            {/*        <InputLabel id='form-layouts-separator-multiple-select-label'>Aldeia</InputLabel>*/}
-            {/*        <Select*/}
-            {/*          multiple*/}
-            {/*          value={language}*/}
-            {/*          onChange={handleSelectChange}*/}
-            {/*          id='form-layouts-separator-multiple-select'*/}
-            {/*          labelId='form-layouts-separator-multiple-select-label'*/}
-            {/*          input={<OutlinedInput label='Aldeia' id='select-multiple-language' />}*/}
-            {/*        >*/}
-            {/*          <MenuItem value='English'>English</MenuItem>*/}
-            {/*          <MenuItem value='French'>French</MenuItem>*/}
-            {/*          <MenuItem value='Spanish'>Spanish</MenuItem>*/}
-            {/*          <MenuItem value='Portuguese'>Portuguese</MenuItem>*/}
-            {/*          <MenuItem value='Italian'>Italian</MenuItem>*/}
-            {/*          <MenuItem value='German'>German</MenuItem>*/}
-            {/*          <MenuItem value='Arabic'>Arabic</MenuItem>*/}
-            {/*        </Select>*/}
-            {/*      </FormControl>*/}
-            {/*    </Grid>*/}
-            {/*    <Grid item xs={3} sm={1}>*/}
-            {/*      <TextField fullWidth label='Code' placeholder='' />*/}
-            {/*    </Grid>*/}
-            {/*  </Grid>*/}
-            {/*</Grid>*/}
-
-            {/*<Grid item xs={12} sm={9}>*/}
-            {/*  <TextField fullWidth type='email' label='Email' placeholder='carterleonard@gmail.com' />*/}
-            {/*</Grid>*/}
-
-
-
-            {/*<Grid item xs={2}>*/}
-            {/*  <Typography variant='body2' sx={{ fontWeight: 600 }}>*/}
-            {/*    6. Data Digital*/}
-            {/*  </Typography>*/}
-            {/*  <Grid container sx={{mt: 2}} spacing={2}>*/}
-            {/*    <Grid item xs={9} sm={9} border={1} height={200}>*/}
-
-            {/*    </Grid>*/}
-            {/*    <Grid item xs={9} sm={9} border={1} height={200}>*/}
-
-            {/*    </Grid>*/}
-            {/*    <Grid item xs={9} sm={9} border={1} height={200}>*/}
-
-            {/*    </Grid>*/}
-            {/*  </Grid>*/}
-            {/*</Grid>*/}
-
-            {/*<Grid item xs={9}>*/}
-            {/*  <Typography variant='body2' sx={{ fontWeight: 600 }}>*/}
-            {/*    2. Personal Info*/}
-            {/*  </Typography>*/}
-            {/*</Grid>*/}
-            {/*<Grid item xs={9}>*/}
-            {/*  <Typography variant='body2' sx={{ fontWeight: 600 }}>*/}
-            {/*    3. Register Information*/}
-            {/*  </Typography>*/}
-            {/*</Grid>*/}
-            {/*<Grid item xs={9}>*/}
-            {/*  <Typography variant='body2' sx={{ fontWeight: 600 }}>*/}
-            {/*    4. Document*/}
-            {/*  </Typography>*/}
-            {/*</Grid>*/}
-            {/*<Grid item xs={9}>*/}
-            {/*  <Typography variant='body2' sx={{ fontWeight: 600 }}>*/}
-            {/*    5. Evidence*/}
-            {/*  </Typography>*/}
-            {/*</Grid>*/}
-            {/*<Grid item xs={12} sm={6}>*/}
-            {/*  <TextField fullWidth label='First Name' placeholder='Leonard' />*/}
-            {/*</Grid>*/}
-            {/*<Grid item xs={12} sm={6}>*/}
-            {/*  <TextField fullWidth label='Last Name' placeholder='Carter' />*/}
-            {/*</Grid>*/}
-            {/*<Grid item xs={12} sm={6}>*/}
-            {/*  <FormControl fullWidth>*/}
-            {/*    <InputLabel id='form-layouts-separator-select-label'>Country</InputLabel>*/}
-            {/*    <Select*/}
-            {/*      label='Country'*/}
-            {/*      defaultValue=''*/}
-            {/*      id='form-layouts-separator-select'*/}
-            {/*      labelId='form-layouts-separator-select-label'*/}
-            {/*    >*/}
-            {/*      <MenuItem value='UK'>UK</MenuItem>*/}
-            {/*      <MenuItem value='USA'>USA</MenuItem>*/}
-            {/*      <MenuItem value='Australia'>Australia</MenuItem>*/}
-            {/*      <MenuItem value='Germany'>Germany</MenuItem>*/}
-            {/*    </Select>*/}
-            {/*  </FormControl>*/}
-            {/*</Grid>*/}
-
-            {/*<Grid item xs={12} sm={6}>*/}
-            {/*  <DatePicker*/}
-            {/*    selected={date}*/}
-            {/*    showYearDropdown*/}
-            {/*    showMonthDropdown*/}
-            {/*    placeholderText='MM-DD-YYYY'*/}
-            {/*    customInput={<CustomInput />}*/}
-            {/*    id='form-layouts-separator-date'*/}
-            {/*    onChange={(date: Date) => setDate(date)}*/}
-            {/*  />*/}
-            {/*</Grid>*/}
-            {/*<Grid item xs={12} sm={6}>*/}
-            {/*  <TextField fullWidth label='Phone No.' placeholder='+1-123-456-8790' />*/}
-            {/*</Grid>*/}
-          {/*</Grid>*/}
         </CardContent>
         <Divider sx={{ m: '0 !important' }} />
         <CardActions>
