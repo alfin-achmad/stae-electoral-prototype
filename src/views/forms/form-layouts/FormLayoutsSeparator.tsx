@@ -17,10 +17,19 @@ import FormControl from '@mui/material/FormControl'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
+import { useDropzone } from 'react-dropzone'
+
 // ** Third Party Imports
 import DatePicker from 'react-datepicker'
 import {DateType} from "../../../types/forms/reactDatepickerTypes";
 import CustomInput from "../form-elements/pickers/PickersCustomInput";
+import Box from "@mui/material/Box";
+
+interface FileProp {
+  name: string
+  type: string
+  size: number
+}
 
 const FormLayoutsSeparator = () => {
   const [district, setDistrict] = useState<string[]>([])
@@ -28,6 +37,21 @@ const FormLayoutsSeparator = () => {
   const [succo, setSucco] = useState<string[]>([])
   const [aldeia, setAldeia] = useState<string[]>([])
   const [date, setDate] = useState<DateType>(new Date())
+  const [files, setFiles] = useState<File[]>([])
+
+  const { getRootProps, getInputProps } = useDropzone({
+    multiple: false,
+    accept: {
+      'image/*': ['.png', '.jpg', '.jpeg', '.gif']
+    },
+    onDrop: (acceptedFiles: File[]) => {
+      setFiles(acceptedFiles.map((file: File) => Object.assign(file)))
+    }
+  })
+
+  const img = files.map((file: FileProp) => (
+    <img key={file.name} alt={file.name} className='single-file-image' src={URL.createObjectURL(file as any)} />
+  ))
 
   // Handle Select
   const handleSelectChange = (event: SelectChangeEvent<string[]>, typeSelect: string) => {
@@ -584,6 +608,44 @@ const FormLayoutsSeparator = () => {
               <Typography variant='body2' sx={{ fontWeight: 600 }}>
                 6. Data Digital
               </Typography>
+              <Box {...getRootProps({ className: 'dropzone' })} sx={files.length ? { height: 450 } : {}}>
+                <input {...getInputProps()} />
+                {files.length ? (
+                  img
+                ) : (
+                  <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
+                    <Box sx={{ mb: 5, mt: 3, display: 'flex', flexDirection: 'column', justifyContent: 'center',  textAlign: ['center'], border: 1, borderColor: '#CCC', padding: 2, height: 100, width: 400 }}>
+                      <Typography>Click to Capture Photo</Typography>
+                    </Box>
+                  </Box>
+                )}
+              </Box>
+
+              <Box {...getRootProps({ className: 'dropzone' })} sx={files.length ? { height: 450 } : {}}>
+                <input {...getInputProps()} />
+                {files.length ? (
+                  img
+                ) : (
+                  <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
+                    <Box sx={{ mb: 5, display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: ['center'], border: 1, borderColor: '#CCC', padding: 2, height: 100, width: 400 }}>
+                      <Typography>Click to Capture Finger</Typography>
+                    </Box>
+                  </Box>
+                )}
+              </Box>
+
+              <Box {...getRootProps({ className: 'dropzone' })} sx={files.length ? { height: 450 } : {}}>
+                <input {...getInputProps()} />
+                {files.length ? (
+                  img
+                ) : (
+                  <Box sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'], alignItems: 'center' }}>
+                    <Box sx={{ mb: 5, display: 'flex', flexDirection: 'column', justifyContent: 'center',  textAlign: ['center'], border: 1, borderColor: '#CCC', padding: 2, height: 100, width: 400 }}>
+                      <Typography>Click to Capture Signature</Typography>
+                    </Box>
+                  </Box>
+                )}
+              </Box>
             </Grid>
           </Grid>
           {/*<Grid container spacing={5} md={9}>*/}
