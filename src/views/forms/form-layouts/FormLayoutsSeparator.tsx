@@ -269,7 +269,7 @@ const FormLayoutsSeparator = () => {
             <Grid item xs={10}>
               <Grid container spacing={3}>
                 <Grid item xs={12}>
-                  <Typography variant='body2' sx={{ fontWeight: 'bolder' }}>
+                  <Typography sx={{ fontWeight: 'bolder' }}>
                     I. Residence
                   </Typography>
                 </Grid>
@@ -369,7 +369,7 @@ const FormLayoutsSeparator = () => {
                   </Grid>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography variant='body2' sx={{ fontWeight: 'bolder' }}>
+                  <Typography sx={{ fontWeight: 'bolder' }}>
                     II. Personal Info
                   </Typography>
                 </Grid>
@@ -519,7 +519,7 @@ const FormLayoutsSeparator = () => {
                 </Grid>
 
                 <Grid item xs={12}>
-                  <Typography variant='body2' sx={{ fontWeight: 'bolder' }}>
+                  <Typography sx={{ fontWeight: 'bolder' }}>
                     III. Register Information
                   </Typography>
                 </Grid>
@@ -563,7 +563,7 @@ const FormLayoutsSeparator = () => {
                 </Grid>
 
                 <Grid item xs={12}>
-                  <Typography variant='body2' sx={{ fontWeight: 'bolder' }}>
+                  <Typography sx={{ fontWeight: 'bolder' }}>
                     IV Document
                   </Typography>
                 </Grid>
@@ -598,14 +598,14 @@ const FormLayoutsSeparator = () => {
                 </Grid>
 
                 <Grid item xs={12}>
-                  <Typography variant='body2' sx={{ fontWeight: 'bolder' }}>
+                  <Typography sx={{ fontWeight: 'bolder' }}>
                     V. Evidence
                   </Typography>
                 </Grid>
               </Grid>
             </Grid>
             <Grid item xs={2} alignItems="flex-start">
-              <Typography variant='body2' sx={{ fontWeight: 600 }}>
+              <Typography sx={{ fontWeight: 'bolder' }}>
                 VI. Data Digital
               </Typography>
               <Box {...getRootProps({ className: 'dropzone' })} sx={files.length ? { height: 450 } : {}}>
